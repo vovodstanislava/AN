@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="4672bb4b-c182-49a0-be4b-fa735e7c3643" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ProjectId" id="1YGGxxnY2zie7rwWv47cm9i3UhX" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+  </component>
+  <component name="ServiceViewManager">
+    <option name="viewStates">
+      <list>
+        <serviceView>
+          <treeState>
+            <expand />
+            <select />
+          </treeState>
+        </serviceView>
+      </list>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="4672bb4b-c182-49a0-be4b-fa735e7c3643" name="Default Changelist" comment="" />
+      <created>1582561767550</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1582561767550</updated>
+      <workItem from="1582561769054" duration="5602000" />
+      <workItem from="1582617663083" duration="22000" />
+      <workItem from="1582617718292" duration="11000" />
+      <workItem from="1582617741284" duration="3605000" />
+      <workItem from="1582623498081" duration="270000" />
+      <workItem from="1582623786909" duration="574000" />
+      <workItem from="1582726539774" duration="498000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="1032" y="144" key="#JavaScript" timestamp="1582561959780">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="1032" y="144" key="#JavaScript/0.0.1920.1040@0.0.1920.1040" timestamp="1582561959780" />
+    <state x="563" y="259" width="264" height="209" key="Github.ShareDialog" timestamp="1582726665356">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="563" y="259" width="264" height="209" key="Github.ShareDialog/0.0.1366.728@0.0.1366.728" timestamp="1582726665356" />
+    <state x="16" y="64" width="1285" height="600" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1582618777400">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="16" y="64" width="1285" height="600" key="com.intellij.history.integration.ui.views.FileHistoryDialog/0.0.1366.728@0.0.1366.728" timestamp="1582618777400" />
+    <state x="1052" y="92" width="776" height="856" key="com.intellij.history.integration.ui.views.FileHistoryDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1582564834153" />
+    <state x="701" y="189" key="com.intellij.ide.util.TipDialog" timestamp="1582623559899">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="701" y="189" key="com.intellij.ide.util.TipDialog/0.0.1366.728@0.0.1366.728" timestamp="1582623559899" />
+  </component>
+</project>
