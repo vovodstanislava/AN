@@ -8,6 +8,31 @@ class Expression {
     return Math.pow(x, 3) + 2 * Math.pow(x, 2) - 23 * x - 46
   };
 
+  fi(x) {
+    if (x < 3 && x > -3) {
+      console.log(x)
+        return Math.pow(Math.abs( 23 * x + 46 - 2 * x * x), 1/3)
+      }
+    // if (this.fi13(x) < 1 && this.fi13(x) > -1) {
+    //   console.log('fi3', this.fi13(x));
+    //   return this.fi13(x)
+    // }
+    // console.log('fi2', this.fi2(x));
+    return this.fi2(x)
+  };
+
+  fi2(x) {
+    return (3 * Math.pow(x, 2) + 4 * x) / 23
+  };
+
+  ff(x) {
+    return 23 * x + 46 - 2 * Math.pow(x, 2)
+  }
+
+  fi13(x) {
+    return (23 - 4 * x) / (3 * (Math.pow(Math.pow(this.ff(x), 2), 1 / 3)))
+  };
+
   fp(x) {
     return 3 * x * x + 4 * x - 23
   };
@@ -17,9 +42,9 @@ class Expression {
     for (let x = a; x < b; x += h) {
       if (this.f(x) * this.f(x + h) < 0) {
         res.push({
-          x: (x + h).toFixed(2),
-          x0: x.toFixed(2),
-          fx: this.f(x).toFixed(2)
+          x: x + h,
+          x0: x,
+          fx: this.f(x)
         })
       }
     }
@@ -45,6 +70,26 @@ class Expression {
     res.k = k;
     res.x = x;
     return res
+  }
+
+  iteratie(a, b) {
+    const res = {};
+    let x0, x, delta;// delta - precizia de calcul
+    let k = 0;
+    x0 = a;//aproximatia initiala
+    do {
+      k++;// trecerea la urmatorul pas
+      x = this.fi(x0);
+      console.log(x)
+      res.k = k;
+      res.x = x;
+      if (Math.abs(this.f(x)) < this.eps) return res;
+      delta = Math.abs(x - x0);
+      x0 = x;
+    } while (delta > this.eps);
+    res.k = k;
+    res.x = x;
+    return res;
   }
 
   tangentei(a, b) {
@@ -195,6 +240,7 @@ class Expression {
       const result4 = this.coardelor(r[i].x0, r[i].x);
       const result5 = this.mixta(r[i].x0, r[i].x);
       const result6 = this.sectiuneAur(r[i].x0, r[i].x);
+      const result7 = this.iteratie(r[i].x0, r[i].x);
 
 
       console.log(result);
@@ -239,6 +285,12 @@ class Expression {
           x: result6.x.toFixed(12),
           k: result6.k,
           fx: this.f(result6.x).toExponential(3)
+        },
+        {
+          Method: "Iteratiilor",
+          x: result7.x.toFixed(12),
+          k: result7.k,
+          fx: this.f(result7.x).toExponential(3)
         }
       )
 
