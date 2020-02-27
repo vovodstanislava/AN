@@ -9,28 +9,13 @@ class Expression {
   };
 
   fi(x) {
-    if (x < 3 && x > -3) {
-      console.log(x)
-        return Math.pow(Math.abs( 23 * x + 46 - 2 * x * x), 1/3)
-      }
-    // if (this.fi13(x) < 1 && this.fi13(x) > -1) {
-    //   console.log('fi3', this.fi13(x));
-    //   return this.fi13(x)
-    // }
-    // console.log('fi2', this.fi2(x));
-    return this.fi2(x)
-  };
-
-  fi2(x) {
-    return (3 * Math.pow(x, 2) + 4 * x) / 23
-  };
-
-  ff(x) {
-    return 23 * x + 46 - 2 * Math.pow(x, 2)
-  }
-
-  fi13(x) {
-    return (23 - 4 * x) / (3 * (Math.pow(Math.pow(this.ff(x), 2), 1 / 3)))
+    let stasea;
+    if (x > -3 && x < 3) {
+      return (Math.pow(x, 3) + 2 * x * x - 46) / 23
+    } else {
+      stasea = Math.pow(Math.abs(23 * x + 46 - 2 * x * x), 1 / 3)
+    }
+    return (x > 0) ? stasea : -stasea;
   };
 
   fp(x) {
@@ -74,13 +59,12 @@ class Expression {
 
   iteratie(a, b) {
     const res = {};
-    let x0, x, delta;// delta - precizia de calcul
+    let x0, x, delta;
     let k = 0;
-    x0 = a;//aproximatia initiala
+    x0 = a;
     do {
-      k++;// trecerea la urmatorul pas
+      k++;
       x = this.fi(x0);
-      console.log(x)
       res.k = k;
       res.x = x;
       if (Math.abs(this.f(x)) < this.eps) return res;
@@ -209,7 +193,7 @@ class Expression {
     const res = {};
     let x_stang, x_drept, SA, k = 0, a1 = +a, b1 = +b;
     SA = (Math.sqrt(5) - 1) / 2;
-    x_stang = b1 - (1 - a1) * SA;
+    x_stang = b1 - (b1 - a1) * SA;
     x_drept = a1 + (b1 - a1) * SA;
     do {
       if (Math.abs(this.f(x_stang)) < Math.abs(this.f(x_drept))) {
@@ -243,7 +227,6 @@ class Expression {
       const result7 = this.iteratie(r[i].x0, r[i].x);
 
 
-      console.log(result);
       this.res.push({
           Method: "Bisectia",
           x: result.x.toFixed(12),
@@ -304,31 +287,22 @@ const table = document.getElementById('table');
 const results = expr.getResult(-6, 6, 0.101);
 const table2 = document.getElementById('table2');
 const method = expr.getMethod();
-table.innerHTML = `
 
-    ${
+table.innerHTML = ` ${
   results.map(item => `
-					
-                    <tr>
-                        <td>${item.x0}</td>
-                        <td>${item.x}</td>
-                    </tr>
-                `)
-    .join('')
-}
-`;
-table2.innerHTML = `
-
-    ${
+    <tr>
+        <td>${item.x0.toFixed(2)}</td>
+        <td>${item.x.toFixed(2)}</td>
+    </tr>
+`).join('')
+}`;
+table2.innerHTML = `${
   method.map(item => `
-					
-                    <tr>
-                        <td>${item.Method}</td>
-                        <td>${item.x}</td>
-                        <td>${item.k}</td>
-                        <td>${item.fx}</td>
-                    </tr>
-                `)
-    .join('')
-}
-`;
+    <tr>
+        <td>${item.Method}</td>
+        <td>${item.x}</td>
+        <td>${item.k}</td>
+        <td>${item.fx}</td>
+    </tr>
+`).join('')
+}`;
