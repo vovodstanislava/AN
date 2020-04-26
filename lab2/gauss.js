@@ -1,4 +1,6 @@
-const app = document.getElementById('app')
+const app = document.getElementById('gauss')
+
+app.innerHTML += `<b>Metoda Gauss:</b>`
 
 const main = () => {
     const n = 5;
