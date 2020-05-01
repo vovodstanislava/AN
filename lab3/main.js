@@ -4,17 +4,12 @@ const table2 = document.getElementById('table2')
 const table3 = document.getElementById('table3')
 const diff = document.getElementById('diff')
 const diff2 = document.getElementById('diff2')
-const nm = 10
-
-const g = (x) => {
-  return x * Math.exp(Math.sin(x));
-}
 
 const main = () => {
-  let i, j, n = 7, k, l = 5;
-  let x = [2, 2.2, 2.4, 2.6, 2.8, 3, 3.2];
-  let y = [150, 206.34432, 283.03424, 384.82176, 517.11168, 686, 898.31232];
-  let z = [2.08, 2.15, 2.3, 2.4, 2.8];
+  let i, j, n = 10, k, l = 10;
+  let x = [-10, -8, -6, -4, -2, 0, 2, 4, 6, 8];
+  let y = [-1351235, -431515, -98083, -11819, -259, 5, 925, 20597, 140861, 564901];
+  let z = [-9, -7, -5, -3, 1, 3, 5, 7, 8, 9];
   let cerc = [], t, h, pn, q;
 
   h = x[1] - x[0];
@@ -49,11 +44,15 @@ const main = () => {
   }
 }
 
+const g = (x) => {
+  return (Math.sin(x) * Math.exp(x + 2))/(x + 1);
+}
+
 const main2 = () => {
-  let i, j, n = 7, k, l = 5;
-  let x = [2];
+  let i, j, n = 6, k, l = 6;
+  let x = [0];
   let y = [];
-  let z = [2.08, 2.15, 2.3, 2.4, 2.8];
+  let z = [0.1, 0.3, 0.32, 0.4, 0.45, 0.51];
   let cerc = [], t, h = 0.2, pn, q, delta;
 
   for (i = 1; i < n; i++)
