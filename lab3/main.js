@@ -69,18 +69,18 @@ const main2 = () => {
   for (j = 1; j < n; j++) {
     for (i = 0; i < n - j; i++)
       y[i] = y[i + 1] - y[i];
-    cerc[j] = y[0];
+    cerc[j] = y[n - i];
   }
 
   for (i = 0; i < n; i++)
     diff2.innerHTML += `<div>${cerc[i].toFixed(2)}</div>`
 
   for (k = 0; k < l; k++) {
-    t = (z[k] - x[0]) / h;
+    t = (z[k] - x[n-1]) / h;
     pn = cerc[0];
     q = 1;
     for (i = 1; i < n; i++) {
-      q = q * (t - i + 1) / i;
+      q = q * (t + i - 1) / i;
       pn = pn + q * cerc[i];
     }
     delta = Math.abs(pn - g(z[k]));
