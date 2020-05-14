@@ -20,11 +20,11 @@ const main = () => {
   }
 
   // Alcatuim tabelul diferentelor finite
-  cerc[0] = y[0];
+  cerc[0] = y[n - 1];
   for (j = 1; j < n; j++) {
     for (i = 0; i < n - j; i++)
       y[i] = y[i + 1] - y[i];
-    cerc[j] = y[n - i];
+    cerc[j] = y[n - j - 1];
   }
 
   for (i = 0; i < n; i++) {
@@ -33,16 +33,17 @@ const main = () => {
 
 
   for (k = 0; k < l; k++) {
-    t = (z[k] - x[0]) / h;
+    t = (z[k] - x[n - 1]) / h;
     pn = cerc[0];
     q = 1;
     for (i = 1; i < n; i++) {
-      q = q * (t - i + 1) / i;
+      q = q * (t + i - 1) / i;
       pn = pn + q * cerc[i];
     }
     table1.innerHTML += `<tr><td>${z[k]}</td><td>${pn.toFixed(2)}</td></tr>`
   }
 }
+
 
 const g = (x) => {
   return (Math.sin(x) * Math.exp(x + 2))/(x + 1);
@@ -61,21 +62,21 @@ const main2 = () => {
     y[i] = g(x[i]);
 
   for (i = 0; i < n; i++)
-    table2.innerHTML += `<tr><td>${x[i].toFixed(2)}</td><td>${y[i].toFixed(2)}</td></tr>`
+    table2.innerHTML += `<tr><td>${x[i].toFixed(2)}</td><td>${y[i].toFixed(5)}</td></tr>`
 
   // Alcatuim tabeluldiferentelor finite
-  cerc[0] = y[0];
+  cerc[0] = y[n - 1];
   for (j = 1; j < n; j++) {
     for (i = 0; i < n - j; i++)
       y[i] = y[i + 1] - y[i];
-    cerc[j] = y[n - i];
+    cerc[j] = y[n - j - 1];
   }
 
   for (i = 0; i < n; i++)
     diff2.innerHTML += `<div>${cerc[i].toFixed(2)}</div>`
 
   for (k = 0; k < l; k++) {
-    t = (z[k] - x[n-1]) / h;
+    t = (z[k] - x[n - 1]) / h;
     pn = cerc[0];
     q = 1;
     for (i = 1; i < n; i++) {
@@ -86,13 +87,14 @@ const main2 = () => {
     table3.innerHTML += `
         <tr>
           <td>${z[k]}</td>
-          <td>${pn.toFixed(2)}</td>
-          <td>${g(z[k]).toFixed(2)}</td>
+          <td>${pn.toFixed(5)}</td>
+          <td>${g(z[k]).toFixed(5)}</td>
           <td>${delta}</td>
         </tr>
       `
   }
 }
+
 
 main()
 main2()
